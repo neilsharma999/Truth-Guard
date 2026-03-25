@@ -1,4 +1,3 @@
-Gemini said
 🧠 TruthGuard-X
 An AI-powered misinformation detector designed for the modern web. TruthGuard-X analyzes text in real-time to identify fake news, propaganda, and deepfake-style misinformation, providing users with a definitive Credibility Score.
 
