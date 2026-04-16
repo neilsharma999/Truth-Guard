@@ -140,6 +140,15 @@ This tool provides an **AI-generated credibility estimate** and should not be co
 
 ---
 
+## 🤖 AI Usage Declaration
+
+This project leverages AI tools to enhance development and functionality:
+* **Code Generation:** Portions of the codebase, including components and backend routes, were developed with pair-programming assistance from AI coding assistants (like Gemini and Claude).
+* **Core Application Features:** The application's core logic utilizes the `Groq API` (for the AI chatbot functionality running open-source LLMs) and the `OpenRouter API` (for fetching models and evaluating news credibility). 
+* **Design & UX:** Some styling decisions and UI layouts were mapped out using generative design discussions.
+
+---
+
 ## 📌 Future Improvements
 
 * Real-time news verification
