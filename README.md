@@ -1,5 +1,7 @@
 # 🧠 AI Misinformation Detector
 
+**Live Website:** [https://truthguard-one.vercel.app](https://truthguard-one.vercel.app)
+
 An AI-powered tool that detects **fake news and misinformation in real time**.
 This project analyzes text using AI and provides a **credibility score** to help users identify whether the information is trustworthy or potentially misleading.
 
