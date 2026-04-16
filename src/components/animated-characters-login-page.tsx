@@ -45,7 +45,7 @@ const Pupil = ({
   const calculatePupilPosition = () => {
     if (!pupilRef.current) return { x: 0, y: 0 };
 
-    // If forced look direction is provided, use that instead of mouse tracking
+    
     if (forceLookX !== undefined && forceLookY !== undefined) {
       return { x: forceLookX, y: forceLookY };
     }
@@ -126,7 +126,7 @@ const EyeBall = ({
   const calculatePupilPosition = () => {
     if (!eyeRef.current) return { x: 0, y: 0 };
 
-    // If forced look direction is provided, use that instead of mouse tracking
+    
     if (forceLookX !== undefined && forceLookY !== undefined) {
       return { x: forceLookX, y: forceLookY };
     }
@@ -209,9 +209,9 @@ function LoginPage() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Blinking effect for purple character
+  
   useEffect(() => {
-    const getRandomBlinkInterval = () => Math.random() * 4000 + 3000; // Random between 3-7 seconds
+    const getRandomBlinkInterval = () => Math.random() * 4000 + 3000; 
 
     const scheduleBlink = () => {
       const blinkTimeout = setTimeout(() => {
@@ -219,7 +219,7 @@ function LoginPage() {
         setTimeout(() => {
           setIsPurpleBlinking(false);
           scheduleBlink();
-        }, 150); // Blink duration 150ms
+        }, 150); 
       }, getRandomBlinkInterval());
 
       return blinkTimeout;
@@ -229,9 +229,9 @@ function LoginPage() {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Blinking effect for black character
+  
   useEffect(() => {
-    const getRandomBlinkInterval = () => Math.random() * 4000 + 3000; // Random between 3-7 seconds
+    const getRandomBlinkInterval = () => Math.random() * 4000 + 3000; 
 
     const scheduleBlink = () => {
       const blinkTimeout = setTimeout(() => {
@@ -239,7 +239,7 @@ function LoginPage() {
         setTimeout(() => {
           setIsBlackBlinking(false);
           scheduleBlink();
-        }, 150); // Blink duration 150ms
+        }, 150); 
       }, getRandomBlinkInterval());
 
       return blinkTimeout;
@@ -249,20 +249,20 @@ function LoginPage() {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Looking at each other animation when typing starts
+  
   useEffect(() => {
     if (isTyping) {
       setIsLookingAtEachOther(true);
       const timer = setTimeout(() => {
         setIsLookingAtEachOther(false);
-      }, 800); // Look at each other for 1.5 seconds, then back to tracking mouse
+      }, 800); 
       return () => clearTimeout(timer);
     } else {
       setIsLookingAtEachOther(false);
     }
   }, [isTyping]);
 
-  // Purple sneaky peeking animation when typing password and it's visible
+  
   useEffect(() => {
     if (password.length > 0 && showPassword) {
       const schedulePeek = () => {
@@ -270,8 +270,8 @@ function LoginPage() {
           setIsPurplePeeking(true);
           setTimeout(() => {
             setIsPurplePeeking(false);
-          }, 800); // Peek for 800ms
-        }, Math.random() * 3000 + 2000); // Random peek every 2-5 seconds
+          }, 800); 
+        }, Math.random() * 3000 + 2000); 
         return peekInterval;
       };
 
@@ -287,16 +287,16 @@ function LoginPage() {
 
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 3; // Focus on head area
+    const centerY = rect.top + rect.height / 3; 
 
     const deltaX = mouseX - centerX;
     const deltaY = mouseY - centerY;
 
-    // Face movement (limited range)
+    
     const faceX = Math.max(-15, Math.min(15, deltaX / 20));
     const faceY = Math.max(-10, Math.min(10, deltaY / 30));
 
-    // Body lean (skew for lean while keeping bottom straight) - negative to lean towards mouse
+    
     const bodySkew = Math.max(-6, Math.min(6, -deltaX / 120));
 
     return { faceX, faceY, bodySkew };
@@ -312,10 +312,10 @@ function LoginPage() {
     setError("");
     setIsLoading(true);
 
-    // Simulate API delay (quick)
+    
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    // Mock authentication or registration
+    
     if (isLogin) {
       if (email === "sgu@gmail.com" && password === "1234") {
         console.log("✅ Login successful!");
@@ -325,7 +325,7 @@ function LoginPage() {
         console.log("❌ Login failed");
       }
     } else {
-      // Mock Sign Up
+      
       console.log("✅ Registration successful!");
       router.push("/dashboard");
     }
@@ -335,7 +335,7 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Left Content Section */}
+      {}
       <div className="relative hidden lg:flex flex-col justify-between bg-gradient-to-br from-primary/90 via-primary to-primary/80 p-12 text-primary-foreground">
         <div className="relative z-20">
           <div className="flex items-center gap-2 text-lg font-semibold">
@@ -347,9 +347,9 @@ function LoginPage() {
         </div>
 
         <div className="relative z-20 flex items-end justify-center h-[500px]">
-          {/* Cartoon Characters */}
+          {}
           <div className="relative" style={{ width: '550px', height: '400px' }}>
-            {/* Purple tall rectangle character - Back layer */}
+            {}
             <div 
               ref={purpleRef}
               className="absolute bottom-0 transition-all duration-700 ease-in-out"
@@ -368,7 +368,7 @@ function LoginPage() {
                 transformOrigin: 'bottom center',
               }}
             >
-              {/* Eyes */}
+              {}
               <div 
                 className="absolute flex gap-8 transition-all duration-700 ease-in-out"
                 style={{
@@ -399,7 +399,7 @@ function LoginPage() {
               </div>
             </div>
 
-            {/* Black tall rectangle character - Middle layer */}
+            {}
             <div 
               ref={blackRef}
               className="absolute bottom-0 transition-all duration-700 ease-in-out"
@@ -420,7 +420,7 @@ function LoginPage() {
                 transformOrigin: 'bottom center',
               }}
             >
-              {/* Eyes */}
+              {}
               <div 
                 className="absolute flex gap-6 transition-all duration-700 ease-in-out"
                 style={{
@@ -451,7 +451,7 @@ function LoginPage() {
               </div>
             </div>
 
-            {/* Orange semi-circle character - Front left */}
+            {}
             <div 
               ref={orangeRef}
               className="absolute bottom-0 transition-all duration-700 ease-in-out"
@@ -466,7 +466,7 @@ function LoginPage() {
                 transformOrigin: 'bottom center',
               }}
             >
-              {/* Eyes - just pupils, no white */}
+              {}
               <div 
                 className="absolute flex gap-8 transition-all duration-200 ease-out"
                 style={{
@@ -479,7 +479,7 @@ function LoginPage() {
               </div>
             </div>
 
-            {/* Yellow tall rectangle character - Front right */}
+            {}
             <div 
               ref={yellowRef}
               className="absolute bottom-0 transition-all duration-700 ease-in-out"
@@ -494,7 +494,7 @@ function LoginPage() {
                 transformOrigin: 'bottom center',
               }}
             >
-              {/* Eyes - just pupils, no white */}
+              {}
               <div 
                 className="absolute flex gap-6 transition-all duration-200 ease-out"
                 style={{
@@ -505,7 +505,7 @@ function LoginPage() {
                 <Pupil size={12} maxDistance={5} pupilColor="#2D2D2D" forceLookX={(password.length > 0 && showPassword) ? -5 : undefined} forceLookY={(password.length > 0 && showPassword) ? -4 : undefined} />
                 <Pupil size={12} maxDistance={5} pupilColor="#2D2D2D" forceLookX={(password.length > 0 && showPassword) ? -5 : undefined} forceLookY={(password.length > 0 && showPassword) ? -4 : undefined} />
               </div>
-              {/* Horizontal line for mouth */}
+              {}
               <div 
                 className="absolute w-20 h-[4px] bg-[#2D2D2D] rounded-full transition-all duration-200 ease-out"
                 style={{
@@ -529,16 +529,16 @@ function LoginPage() {
           </a>
         </div>
 
-        {/* Decorative elements */}
+        {}
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
         <div className="absolute top-1/4 right-1/4 size-64 bg-primary-foreground/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 size-96 bg-primary-foreground/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Right Login Section */}
+      {}
       <div className="flex items-center justify-center p-8 bg-background">
         <div className="w-full max-w-[420px]">
-          {/* Mobile Logo */}
+          {}
           <div className="lg:hidden flex items-center justify-center gap-2 text-lg font-semibold mb-12">
             <div className="size-8 rounded-lg bg-primary/10 flex items-center justify-center">
               <Sparkles className="size-4 text-primary" />
@@ -546,7 +546,7 @@ function LoginPage() {
             <span>Truthguard-X</span>
           </div>
 
-          {/* Header */}
+          {}
           <div className="text-center mb-10">
             <h1 className="text-3xl font-bold tracking-tight mb-2">
               {isLogin ? "Welcome back!" : "Create an account"}
@@ -556,7 +556,7 @@ function LoginPage() {
             </p>
           </div>
 
-          {/* Login Form */}
+          {}
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-medium">Email</Label>
@@ -634,7 +634,7 @@ function LoginPage() {
             </Button>
           </form>
 
-          {/* Social Login */}
+          {}
           <div className="mt-6">
             <Button 
               variant="outline" 
@@ -647,7 +647,7 @@ function LoginPage() {
             </Button>
           </div>
 
-          {/* Toggle Link */}
+          {}
           <div className="text-center text-sm text-muted-foreground mt-8">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <button 

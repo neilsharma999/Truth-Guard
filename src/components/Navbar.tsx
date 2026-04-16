@@ -43,9 +43,9 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-[200] px-6 md:px-12 py-4 flex items-center justify-between bg-[rgba(8,11,26,0.75)] backdrop-blur-[28px] border-b border-[var(--border-gold)]">
-            {/* Left: Language & Logo */}
+            {}
             <div className="flex items-center gap-8">
-                {/* Logo & Flag */}
+                {}
                 <div className="flex items-center gap-6">
                     <Link href="/" className="nav-logo group relative text-2xl md:text-3xl">
                         <span className="relative z-10 transition-all duration-500 group-hover:tracking-[5px] font-old">
@@ -56,7 +56,7 @@ export default function Navbar() {
                     <FlagIcon className="w-8 h-5 opacity-100 brightness-125 shadow-xl" />
                 </div>
 
-                {/* Desktop Links */}
+                {}
                 <ul className="hidden md:flex items-center gap-9 list-none mb-0">
                     {links.map((link) => {
                         const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/");
@@ -76,9 +76,9 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            {/* Right: Lang, Theme, CTA */}
+            {}
             <div className="flex items-center gap-4 md:gap-8">
-                {/* Language Selector */}
+                {}
                 <div className="relative">
                     <button 
                         onClick={() => setShowLang(!showLang)}
@@ -109,7 +109,7 @@ export default function Navbar() {
                     )}
                 </div>
 
-                {/* Theme Toggle (Minimalist) */}
+                {}
                 <button 
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                     className="p-2 border border-[var(--border-dim)] rounded-full text-[var(--text-dim)] hover:text-[var(--gold2)] hover:border-[var(--border-gold)] transition-all"
@@ -117,7 +117,7 @@ export default function Navbar() {
                     {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                 </button>
 
-                {/* Agent Access / CTA */}
+                {}
                 <Link 
                     href="/auth" 
                     className="nav-cta hidden sm:block"
@@ -125,7 +125,7 @@ export default function Navbar() {
                     Agent Access
                 </Link>
 
-                {/* Mobile Menu Toggle */}
+                {}
                 <button 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     className="md:hidden p-2 text-[var(--gold2)]"
@@ -134,7 +134,7 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Nav Overlay */}
+            {}
             {mobileMenuOpen && (
                 <div className="md:hidden absolute top-[72px] left-0 w-full bg-[rgba(8,11,26,0.95)] backdrop-blur-xl border-b border-[var(--border-gold)] z-[190] p-6 flex flex-col gap-6 animate-in slide-in-from-top-4">
                     <ul className="flex flex-col gap-4 list-none mb-0">

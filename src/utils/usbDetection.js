@@ -1,13 +1,8 @@
-/**
- * WebUSB + Arduino Pendrive Detection
- * Utility to monitor hardware security events.
- */
 
-export const ARDUINO_VENDOR_ID = 0x2341; // Standard Arduino VID
 
-/**
- * Requests access to a USB device
- */
+export const ARDUINO_VENDOR_ID = 0x2341; 
+
+
 export async function requestUsbAccess() {
     try {
         const device = await navigator.usb.requestDevice({
@@ -25,9 +20,7 @@ export async function requestUsbAccess() {
     }
 }
 
-/**
- * Listens for hardware connection events
- */
+
 export function setupUsbListeners(onConnect, onDisconnect) {
     if (!navigator.usb) {
         console.warn("WebUSB not supported in this browser.");

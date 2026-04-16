@@ -80,7 +80,7 @@ function ResultsContent() {
         )
     }
     
-    // Check if result is an error object
+    
     if ((result as any).error) {
         return (
              <div className="flex-1 flex flex-col items-center justify-center min-h-[500px]">
@@ -111,7 +111,7 @@ function ResultsContent() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Left Column - Gauge & Extracted Claim */}
+                {}
                 <div className="lg:col-span-1 space-y-6">
                     <div className="cyber-glass rounded-xl p-6 border border-cyber-panel-border relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-cyber-red/10 rounded-full blur-[50px] pointer-events-none" />
@@ -138,7 +138,7 @@ function ResultsContent() {
                     </div>
                 </div>
 
-                {/* Right Column - Reasoning & Evidence */}
+                {}
                 <div className="lg:col-span-2 space-y-6">
                     <div className="cyber-glass rounded-xl p-6 border border-cyber-panel-border">
                         <h2 className="text-lg font-bold mb-4 font-mono border-b border-cyber-panel-border pb-2 flex items-center">

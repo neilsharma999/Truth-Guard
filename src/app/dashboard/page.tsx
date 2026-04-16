@@ -4,7 +4,7 @@ import AnalysisForm from "@/components/AnalysisForm";
 export default function DashboardPage() {
     return (
         <div className="flex-1 p-8 lg:p-20 relative flex flex-col items-center">
-            {/* Background decorations */}
+            {}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[10%] right-[15%] w-[600px] h-[600px] bg-[var(--gold-faint)] rounded-full blur-[150px]" />
                 <div className="absolute bottom-[20%] left-[10%] w-[700px] h-[700px] bg-[var(--rose-dim)] rounded-full blur-[180px]" />
@@ -32,7 +32,7 @@ export default function DashboardPage() {
 
             <AnalysisForm />
 
-            {/* Quick stats or hints */}
+            {}
             <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
                 <div className="bg-[var(--glass-base)] backdrop-blur-xl p-8 rounded-[24px] text-center border border-[var(--border-dim)] group hover:border-[var(--border-gold2)] transition-all">
                     <div className="text-4xl font-serif font-black text-[var(--text)] mb-2 group-hover:text-[var(--gold2)] transition-colors">94.8%</div>

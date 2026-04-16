@@ -8,7 +8,7 @@ import FlagIcon from './FlagIcon';
 import { jsPDF } from 'jspdf';
 import { useLanguage } from '@/context/LanguageContext';
 
-// --- Utils ---
+
 const toRad = (d: number) => (d * Math.PI) / 180;
 const haversine = (lat1: number, lng1: number, lat2: number, lng2: number) => {
   const R = 6371;
@@ -24,7 +24,7 @@ const findNearest = (lat: number, lng: number, n = 3) => {
     .slice(0, n);
 };
 
-// --- Main Component ---
+
 export default function FirReport() {
   const { t } = useLanguage();
   const [step, setStep] = useState(1);
@@ -40,7 +40,7 @@ export default function FirReport() {
     setMounted(true);
   }, []);
 
-  // City Autocomplete
+  
   useEffect(() => {
     if (location.city.length >= 2) {
       const q = location.city.toLowerCase();
@@ -53,7 +53,7 @@ export default function FirReport() {
 
   if (!mounted) return null;
 
-  // Stepper handling
+  
   const steps = [
     { n: 1, label: t('consent'), icon: Shield },
     { n: 2, label: t('profile'), icon: User },
@@ -81,7 +81,7 @@ export default function FirReport() {
 
   const downloadPDF = () => {
     const doc = new jsPDF();
-    doc.setFillColor(0, 180, 216); // Neo Cyan
+    doc.setFillColor(0, 180, 216); 
     doc.rect(0, 0, 210, 20, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(16);
@@ -125,14 +125,14 @@ export default function FirReport() {
 
   return (
     <div className="flex-1 p-8 lg:p-12 relative flex flex-col items-center min-h-screen">
-      {/* Background decorations removed - handled by RootLayout */}
+      {}
 
-      {/* Compact Corner Flag */}
+      {}
       <div className="absolute top-8 right-8 z-20">
           <FlagIcon className="w-12 h-8 opacity-100 brightness-150 shadow-[0_0_30px_rgba(255,255,255,0.3)]" />
       </div>
 
-      {/* Streamlined Header */}
+      {}
       <div className="w-full max-w-4xl mb-10 text-center md:text-left flex items-center gap-6">
           <div className="p-4 rounded-full bg-neo-cyan/10 text-neo-cyan">
               <Shield className="w-10 h-10" />
@@ -147,9 +147,9 @@ export default function FirReport() {
           </div>
       </div>
 
-      {/* Stepper with Dynamic Progress Bar */}
+      {}
       <div className="w-full max-w-4xl mb-12 relative px-8">
-        {/* The "Not Static" Progress Bar */}
+        {}
         <div className="absolute top-1/2 left-0 w-full h-[2px] bg-white/5 -z-10" />
         <div 
           className="absolute top-1/2 left-0 h-[2px] bg-gradient-to-r from-neo-cyan via-white to-neo-purple shadow-[0_0_25px_rgba(0,229,255,0.7)] -z-10 transition-all duration-1000 ease-in-out overflow-hidden" 
@@ -174,7 +174,7 @@ export default function FirReport() {
         </div>
       </div>
 
-      {/* Content Section */}
+      {}
       <div className="w-full flex flex-col items-center gap-16 pb-20">
         <section className="w-full flex flex-col items-center">
           <div className="w-full max-w-4xl mb-8 flex items-center justify-between px-4 text-xs font-mono">

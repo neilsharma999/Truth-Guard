@@ -60,7 +60,7 @@ export default function Chatbot() {
 
   return (
     <div className="flex flex-col h-[70vh] w-full max-w-4xl mx-auto rounded-xl border border-[var(--border-gold)] bg-[var(--glass-base)] backdrop-blur-3xl overflow-hidden shadow-[0_0_30px_rgba(255,215,0,0.15)]">
-      {/* Header */}
+      {}
       <div className="bg-[var(--glass-gold)] border-b border-[var(--border-gold)] px-6 py-4 flex items-center justify-between">
         <h2 className="text-xl font-serif font-black text-[var(--gold2)] tracking-widest flex items-center gap-3">
           <Bot className="text-[var(--gold2)] w-6 h-6" /> TruthGuard AI Assist
@@ -68,7 +68,7 @@ export default function Chatbot() {
         <span className="text-xs font-mono text-[var(--gold)] px-3 py-1 bg-[var(--glass-base)] border border-[var(--border-gold)] rounded-full">Llama-3.3-70B</span>
       </div>
 
-      {/* Message List */}
+      {}
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
         {messages.length === 0 && (
            <div className="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-70">
@@ -80,7 +80,7 @@ export default function Chatbot() {
         {messages.map((msg, i) => (
           <div key={i} className={`flex w-full ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
             <div className={`flex gap-4 max-w-[85%] ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}>
-              {/* Avatar */}
+              {}
               <div className="flex-shrink-0 mt-1">
                 {msg.role === "user" ? (
                    <div className="w-8 h-8 rounded-full bg-[var(--glass-teal)] border border-[var(--border-teal)] flex items-center justify-center">
@@ -93,7 +93,7 @@ export default function Chatbot() {
                 )}
               </div>
               
-              {/* Bubble */}
+              {}
               <div
                 className={`px-5 py-3 rounded-2xl align-top whitespace-pre-wrap font-sans text-[15px] leading-relaxed
                   ${msg.role === "user" 
@@ -121,7 +121,7 @@ export default function Chatbot() {
         <div ref={bottomRef} />
       </div>
 
-      {/* Input Box */}
+      {}
       <div className="p-4 bg-[var(--bg)] border-t border-[var(--border-gold)]">
         <div className="relative flex items-center w-full group">
           <input

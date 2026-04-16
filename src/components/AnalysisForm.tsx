@@ -21,7 +21,7 @@ export default function AnalysisForm() {
 
     return (
         <div className="w-full max-w-4xl mx-auto bg-[var(--glass-dark)] backdrop-blur-2xl rounded-[32px] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] relative border border-[var(--border-gold)] group">
-            {/* Background Gradient */}
+            {}
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--gold-faint)] to-[var(--rose-dim)] opacity-50 pointer-events-none" />
 
             <div className="p-1 border-b border-white/5 bg-white/5">
@@ -140,7 +140,7 @@ export default function AnalysisForm() {
                 </form>
             </div>
 
-            {/* Decorative scanning line animation during analysis */}
+            {}
             {isAnalyzing && (
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-[var(--gold2)] shadow-[0_0_15px_#ffd700] animate-[scan_2s_ease-in-out_infinite]" />
             )}

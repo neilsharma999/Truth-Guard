@@ -11,10 +11,10 @@ export const chatbotKB: Record<string, string> = {
 export function getLocalAnswer(question: string): string | null {
     const q = question.toLowerCase().trim();
     
-    // Direct match
+    
     if (chatbotKB[q]) return chatbotKB[q];
 
-    // Substring match for key safety topics
+    
     if (q.includes("report") && (q.includes("cybercrime") || q.includes("scam") || q.includes("fraud"))) {
         return chatbotKB["how to report a cybercrime"];
     }
@@ -25,5 +25,5 @@ export function getLocalAnswer(question: string): string | null {
         return chatbotKB["deepfake"];
     }
 
-    return null; // Null means fallback to API
+    return null; 
 }

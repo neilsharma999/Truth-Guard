@@ -18,7 +18,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-// ── Types ──────────────────────────────────────────────────────────────────
+
 type PaymentMethod = "card" | "upi" | "netbanking";
 type Step = "order" | "checkout" | "processing" | "success" | "failed";
 type CardType = "visa" | "mastercard" | "rupay" | "amex" | "unknown";
@@ -49,7 +49,7 @@ interface FormErrors {
   amount?: string;
 }
 
-// ── Helpers ────────────────────────────────────────────────────────────────
+
 function detectCardType(num: string): CardType {
   const n = num.replace(/\s/g, "");
   if (/^4/.test(n)) return "visa";
@@ -82,7 +82,7 @@ function generateTxnId(): string {
 const BANKS = ["State Bank of India", "HDFC Bank", "ICICI Bank", "Axis Bank"];
 const PLANS = ["Monthly", "Quarterly", "Yearly", "Lifetime"];
 
-// ── Components ─────────────────────────────────────────────────────────────
+
 
 function InputField({ label, error, children, icon: Icon }: { label: string; error?: string; children: React.ReactNode; icon: any }) {
   return (
@@ -146,7 +146,7 @@ export default function PaymentPage() {
 
   return (
     <div className="min-h-screen bg-neo-bg text-white pt-24 pb-12 px-6 flex flex-col items-center">
-      {/* Background Decorations */}
+      {}
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neo-cyan/5 blur-[120px] rounded-full pointer-events-none" />
 
       <motion.div 
@@ -156,7 +156,7 @@ export default function PaymentPage() {
       >
         <div className="flex flex-col md:flex-row gap-8">
           
-          {/* Left Side: Order Info / Progress */}
+          {}
           <div className="w-full md:w-1/3 space-y-6">
             <div className="neo-glass rounded-3xl p-8 border border-white/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -204,7 +204,7 @@ export default function PaymentPage() {
             </div>
           </div>
 
-          {/* Right Side: Main Payment Flow */}
+          {}
           <div className="flex-1">
             <AnimatePresence mode="wait">
               {step === "order" && (
@@ -289,7 +289,7 @@ export default function PaymentPage() {
                     </button>
                   </div>
 
-                  {/* Method Select */}
+                  {}
                   <div className="flex p-1 bg-white/5 rounded-2xl border border-white/10">
                     {[
                       { id: "card", label: "Credit Card", Icon: CreditCard },

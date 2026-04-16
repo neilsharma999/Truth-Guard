@@ -31,7 +31,7 @@ async function testAll() {
         );
         console.log(`!!!!! SUCCESS WITH ${model} !!!!!`);
         console.log(`Response: ${response.data.choices[0].message.content}`);
-        return; // FOUND IT
+        return; 
       } catch (error) {
         console.log(`Fail: ${error.response?.data?.error?.message || error.message}`);
       }

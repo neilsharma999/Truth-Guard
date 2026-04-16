@@ -7,7 +7,7 @@ import USBThreatDetector from "@/components/USBThreatDetector";
 export default function LabPage() {
     return (
         <div className="flex-1 p-8 lg:p-20 relative flex flex-col items-center">
-            {/* Background decorations */}
+            {}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[10%] right-[15%] w-[600px] h-[600px] bg-neo-purple/5 rounded-full blur-[150px]" />
                 <div className="absolute bottom-[20%] left-[10%] w-[700px] h-[700px] bg-neo-cyan/5 rounded-full blur-[180px]" />

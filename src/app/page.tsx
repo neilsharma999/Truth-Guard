@@ -26,9 +26,9 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       
-      {/* ═══ HERO SECTION ════════════════════════════════ */}
+      {}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-24 px-6 text-center overflow-hidden">
-        {/* Orbiting Rings */}
+        {}
         <div className="hero-ring hero-ring1" />
         <div className="hero-ring hero-ring2" />
         <div className="hero-ring hero-ring3" />
@@ -75,7 +75,7 @@ export default function Home() {
 
       <div className="divider" />
 
-      {/* ═══ CRISIS SECTION ══════════════════════════════ */}
+      {}
       <section className="py-32 px-6 max-w-[1260px] mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div>

@@ -3,7 +3,7 @@ import React from 'react';
 export default function FlagIcon({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <div className={`relative ${className} group`}>
-      {/* Premium Glow Effect */}
+      {}
       <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/30 via-white/30 to-green-500/30 blur-xl rounded-full opacity-100 transition-opacity duration-300" />
       
       <svg 

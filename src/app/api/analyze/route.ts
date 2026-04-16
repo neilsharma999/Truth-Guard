@@ -3,18 +3,18 @@ import axios from "axios";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY?.trim();
 
-// Check if API key is valid (not placeholder or empty)
+
 const isValidApiKey = (key: string | undefined) => {
   if (!key) return false;
   if (key.includes("your-key") || key.includes("YOUR_KEY")) return false;
-  if (key.length < 30) return false; // Valid OpenRouter keys are longer
+  if (key.length < 30) return false; 
   return true;
 };
 
-// Simple in-memory rate limiter based on IP
+
 const rateLimitCache = new Map<string, { count: number, resetTime: number }>();
 
-// Simple in-memory results cache for duplicate queries
+
 const queryCache = new Map<string, any>();
 
 export async function POST(req: NextRequest) {
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     
     if (rateRecord) {
       if (now > rateRecord.resetTime) {
-        rateLimitCache.set(ip, { count: 1, resetTime: now + 60000 }); // 1 min window
+        rateLimitCache.set(ip, { count: 1, resetTime: now + 60000 }); 
       } else if (rateRecord.count >= 10) {
         return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429, headers: { "X-RateLimit-Limit": "10", "X-RateLimit-Remaining": "0" } });
       } else {
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing or empty text input." }, { status: 400 });
     }
     
-    // Strip simple HTML tags to sanitize
+    
     const sanitizedInput = input.replace(/<\/?[^>]+(>|$)/g, "");
     
     if (sanitizedInput.length > 2000) {
@@ -149,12 +149,12 @@ ${input}
     }
     let attemptCount = 0;
 
-    // Determine Referer dynamically for OpenRouter
+    
     const protocol = req.headers.get("x-forwarded-proto") || "http";
     const host = req.headers.get("host") || "localhost:3000";
     const referer = `${protocol}://${host}`;
 
-    // Helper for delay
+    
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     if (apiKeys.length > 0) {
@@ -178,7 +178,7 @@ ${input}
                   'X-Title': 'TruthGuard X',
                   'Content-Type': 'application/json'
                 },
-                timeout: 10000 // Reduced to 10s for faster fallback
+                timeout: 10000 
               }
             );
 
@@ -219,7 +219,7 @@ ${input}
       let status = "Unverifiable";
       let reasoning = "This claim requires verification against trusted sources. No matching patterns were found in the local intelligence buffer for a definitive assessment.";
 
-      // Expanded Heuristic Matching
+      
       const patterns = [
         {
           keywords: ["sky is blue", "earth is round", "water is h2o", "sun rises", "2+2=4", "gravity", "evolution", "photosynthesis", "dna", "oxygen"],
@@ -277,14 +277,14 @@ ${input}
       };
     }
 
-    // Map response to Dashboard UI
+    
     const score = Number(aiResult.credibility_score) || 50;
     const type = String(aiResult.type).toUpperCase();
 
-    // Prioritize the status field from AI response, fallback to logic if missing
+    
     let statusCategory = aiResult.status || "Unverifiable";
 
-    // Ensure fallback status matches strict criteria if aiResult.status is missing
+    
     if (!aiResult.status) {
       if (type === "OPINION") {
         statusCategory = "Opinion";
@@ -310,7 +310,7 @@ ${input}
       `AI Confidence: ${aiResult.confidence}%`
     ];
 
-    // Use AI-provided sources if available, otherwise fallback
+    
     const sources = aiResult.sources || [
       { 
         name: "TruthGuard X Intelligence", 
@@ -339,7 +339,7 @@ ${input}
       aiDetection: aiResult
     };
 
-    // Store in cache for 1 hour (conceptually, we just put it in the Map without expiry logic here for brevity)
+    
     queryCache.set(cacheKey, responseBody);
 
     return NextResponse.json(responseBody);

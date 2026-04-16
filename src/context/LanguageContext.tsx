@@ -22,7 +22,7 @@ const translations = {
     adaptive_interface: "Adaptive Interface",
     secure_core: "Secure Core",
     bharat_edition: "Bharat Edition",
-    // FIR Report
+    
     consent: "Consent",
     profile: "Profile",
     location: "Location",
@@ -52,7 +52,7 @@ const translations = {
     adaptive_interface: "एडेप्टिव इंटरफेस",
     secure_core: "सुरक्षित कोर",
     bharat_edition: "भारत संस्करण",
-    // FIR Report
+    
     consent: "सहमति",
     profile: "प्रोफ़ाइल",
     location: "स्थान",
@@ -82,7 +82,7 @@ const translations = {
     adaptive_interface: "ਅਨੁਕੂਲ ਇੰਟਰਫੇਸ",
     secure_core: "ਸੁਰੱਖਿਅਤ ਕੋਰ",
     bharat_edition: "ਭਾਰਤ ਐਡੀਸ਼ਨ",
-    // FIR Report
+    
     consent: "ਸਹਿਮਤੀ",
     profile: "ਪ੍ਰੋਫਾਈਲ",
     location: "ਸਥਾਨ",
@@ -112,7 +112,7 @@ const translations = {
     adaptive_interface: "ॲडॉप्टिव्ह इंटरफेस",
     secure_core: "सुरक्षित कोअर",
     bharat_edition: "भारत आवृत्ती",
-    // FIR Report
+    
     consent: "संमती",
     profile: "प्रोफाइल",
     location: "स्थान",
@@ -142,7 +142,7 @@ const translations = {
     adaptive_interface: "অ্যাডাপ্টিভ ইন্টারফেস",
     secure_core: "সুরক্ষিত কোর",
     bharat_edition: "ভারত সংস্করণ",
-    // FIR Report
+    
     consent: "সম্মতি",
     profile: "প্রোফাইল",
     location: "স্থান",
@@ -172,7 +172,7 @@ const translations = {
     adaptive_interface: "தகவமைப்பு இடைமுகம்",
     secure_core: "பாதுகாப்பான கோர்",
     bharat_edition: "பாரத் பதிப்பு",
-    // FIR Report
+    
     consent: "சம்மதம்",
     profile: "சுயவிவரம்",
     location: "இடம்",
@@ -198,7 +198,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>('en');
 
-  // Load locale from localStorage on mount
+  
   useEffect(() => {
     const saved = localStorage.getItem('tg-locale') as Locale;
     if (saved && translations[saved]) {

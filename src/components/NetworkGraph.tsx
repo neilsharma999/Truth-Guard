@@ -9,7 +9,7 @@ export default function NetworkGraph() {
     useEffect(() => {
         if (!containerRef.current) return;
 
-        // Clean up previous renders
+        
         containerRef.current.innerHTML = "";
 
         const width = containerRef.current.clientWidth;
@@ -65,10 +65,10 @@ export default function NetworkGraph() {
             .data(data.nodes)
             .join("circle")
             .attr("r", d => d.radius)
-            // Group 1: Source (Purple), Group 2: Amplifiers (Cyan), Group 3: Super-spreaders (White)
+            
             .attr("fill", d => d.group === 1 ? "#bf5af2" : d.group === 2 ? "#00e5ff" : "#ffffff");
 
-        // Add glowing filter definition
+        
         const defs = svg.append("defs");
         const filter = defs.append("filter").attr("id", "glow");
         filter.append("feGaussianBlur").attr("stdDeviation", "4").attr("result", "coloredBlur");

@@ -12,7 +12,7 @@ export default function RadarPage() {
 
     return (
         <div className="flex-1 p-8 lg:p-20 relative flex flex-col items-center">
-            {/* Background decorations */}
+            {}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[5%] left-[10%] w-[500px] h-[500px] bg-neo-purple/5 rounded-full blur-[150px]" />
                 <div className="absolute bottom-[10%] right-[15%] w-[600px] h-[600px] bg-neo-cyan/5 rounded-full blur-[180px]" />

@@ -6,7 +6,7 @@ const keys = [
   process.env.BACKUP_API_KEY
 ].filter(Boolean);
 
-// Test with gemma-3-12b which showed up in the list
+
 const model = 'google/gemma-3-12b-it:free';
 
 async function test() {

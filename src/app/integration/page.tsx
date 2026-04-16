@@ -25,7 +25,7 @@ export default function IntegrationHubPage() {
 
   return (
     <div className="min-h-screen bg-neo-bg pt-32 pb-20 px-8 relative overflow-hidden">
-      {/* Decorative blurred background */}
+      {}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neo-purple/10 blur-[150px] -z-10" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-neo-cyan/10 blur-[150px] -z-10" />
 
@@ -52,7 +52,7 @@ export default function IntegrationHubPage() {
                 href={item.href}
                 className="group relative rounded-[32px] overflow-hidden transition-all duration-500 hover:scale-[1.02]"
               >
-                {/* Custom Border Gradient Simulation */}
+                {}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent p-px rounded-[32px]">
                   <div className="absolute inset-0 bg-neo-bg rounded-[32px] opacity-90" />
                 </div>

@@ -17,34 +17,34 @@ export default function GaugeChart({ score, status }: GaugeChartProps) {
         return () => clearTimeout(timeout);
     }, [score]);
 
-    // Determine color based on status or score fallback
-    let color = "#00ff66"; // Likely True (Green)
+    
+    let color = "#00ff66"; 
     const normalizedStatus = status?.toLowerCase() || "";
 
     if (normalizedStatus.includes("fake") || (score < 40 && !status)) {
-        color = "#bf5af2"; // Likely Fake (Purple) - Matches image style
+        color = "#bf5af2"; 
     } else if (normalizedStatus.includes("misleading") || (score < 60 && !status)) {
-        color = "#ffaa00"; // Misleading (Amber)
+        color = "#ffaa00"; 
     } else if (normalizedStatus.includes("partially") || (score < 80 && !status)) {
-        color = "#00e5ff"; // Partially True (Cyan)
+        color = "#00e5ff"; 
     } else if (normalizedStatus.includes("opinion") || score === 50) {
-        color = "#a855f7"; // Opinion (Purple)
+        color = "#a855f7"; 
     } else if (normalizedStatus.includes("unverifiable")) {
-        color = "#94a3b8"; // Unverifiable (Slate)
+        color = "#94a3b8"; 
     }
 
-    // Calculate SVG circle properties
+    
     const radius = 80;
     const strokeWidth = 10;
     const center = 100;
     const circumference = 2 * Math.PI * radius;
-    // The dashoffset controls how much of the stroke is hidden
+    
     const strokeDashoffset = circumference - (animatedScore / 100) * circumference;
 
     return (
         <div className="relative flex flex-col items-center justify-center">
             <svg className="w-72 h-72 transform -rotate-90" viewBox="0 0 200 200">
-                {/* Background Circle */}
+                {}
                 <circle
                     cx={center}
                     cy={center}
@@ -54,7 +54,7 @@ export default function GaugeChart({ score, status }: GaugeChartProps) {
                     strokeWidth={strokeWidth}
                 />
                 
-                {/* Track Circle (Subtle background path) */}
+                {}
                 <circle
                     cx={center}
                     cy={center}
@@ -64,7 +64,7 @@ export default function GaugeChart({ score, status }: GaugeChartProps) {
                     strokeWidth={strokeWidth}
                 />
 
-                {/* Foreground Progress Circle */}
+                {}
                 <circle
                     cx={center}
                     cy={center}
@@ -82,7 +82,7 @@ export default function GaugeChart({ score, status }: GaugeChartProps) {
                 />
             </svg>
 
-            {/* Absolute positioning for text inside the circle */}
+            {}
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                 <span className="text-7xl font-black transition-all duration-500 tracking-tighter" style={{ color, textShadow: `0 0 30px ${color}40` }}>
                     {Math.round(animatedScore)}
