@@ -142,14 +142,9 @@ This tool provides an **AI-generated credibility estimate** and should not be co
 
 ## 🤖 AI Usage Declaration
 
-I used AI pretty heavily throughout this project — here's exactly where:
-
-- **Writing code:** I used Claude and Gemini as pair-programming tools to help write React components, API routes, CSS, and to fix bugs. I handled the architecture and design decisions myself, but AI helped me move faster on the actual coding.
-- **The app itself runs on AI:** The misinformation detector calls OpenRouter API (Gemini, LLaMA models) to score news credibility. The chatbot runs on Groq API. These are core features — the whole point of the app is AI-powered analysis.
-- **This README was written with AI help.** I used AI to help draft and format this documentation.
-- **Debugging and deployment:** AI helped me troubleshoot build errors, fix CSS issues, and get the Vercel deployment working.
-
-**What I did myself:** The project idea, the data research (police stations, helplines, legal info), testing everything, and making the final calls on how things should look and work.
+- **App features:** The misinformation detector and chatbot use OpenRouter and Groq APIs to analyze content.
+- **Development:** AI tools (Claude, Gemini) were used for pair-programming assistance and debugging.
+- **Documentation:** AI helped draft this README.
 
 ---
 
