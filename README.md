@@ -142,10 +142,22 @@ This tool provides an **AI-generated credibility estimate** and should not be co
 
 ## 🤖 AI Usage Declaration
 
-This project leverages AI tools to enhance development and functionality:
-* **Code Generation:** Portions of the codebase, including components and backend routes, were developed with pair-programming assistance from AI coding assistants (like Gemini and Claude).
-* **Core Application Features:** The application's core logic utilizes the `Groq API` (for the AI chatbot functionality running open-source LLMs) and the `OpenRouter API` (for fetching models and evaluating news credibility). 
-* **Design & UX:** Some styling decisions and UI layouts were mapped out using generative design discussions.
+> **This project uses AI.** Below is a transparent breakdown of how AI was used throughout this project.
+
+### AI in Development
+* **Code Assistance:** Portions of the codebase, including React components, API routes, and styling, were developed with pair-programming assistance from AI coding tools (Google Gemini, Anthropic Claude).
+* **Debugging & Deployment:** AI assistants helped troubleshoot build errors, configure Vercel deployment, and resolve CSS/UI bugs.
+* **Design & UX:** Some styling decisions, UI layouts, and component structures were iterated on using AI-assisted design discussions.
+
+### AI in the Application Itself
+* **Misinformation Analysis:** The core credibility scoring engine uses the **OpenRouter API** to route prompts to large language models (e.g., Google Gemini, Meta LLaMA) for real-time news and claim analysis.
+* **AI Chatbot:** The built-in chat feature uses the **Groq API** running open-source LLMs to answer user questions about misinformation, digital safety, and Indian cyber law.
+* **Deepfake Detection:** The deepfake analysis module leverages AI models to evaluate media authenticity.
+
+### What Was NOT AI-Generated
+* **Project concept & ideation** — conceived and designed by the team.
+* **Data curation** (police station database, helpline numbers, legal references) — manually researched.
+* **Testing & validation** — manually performed by the team.
 
 ---
 
