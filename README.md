@@ -142,22 +142,14 @@ This tool provides an **AI-generated credibility estimate** and should not be co
 
 ## 🤖 AI Usage Declaration
 
-> **This project uses AI.** Below is a transparent breakdown of how AI was used throughout this project.
+I used AI pretty heavily throughout this project — here's exactly where:
 
-### AI in Development
-* **Code Assistance:** Portions of the codebase, including React components, API routes, and styling, were developed with pair-programming assistance from AI coding tools (Google Gemini, Anthropic Claude).
-* **Debugging & Deployment:** AI assistants helped troubleshoot build errors, configure Vercel deployment, and resolve CSS/UI bugs.
-* **Design & UX:** Some styling decisions, UI layouts, and component structures were iterated on using AI-assisted design discussions.
+- **Writing code:** I used Claude and Gemini as pair-programming tools to help write React components, API routes, CSS, and to fix bugs. I handled the architecture and design decisions myself, but AI helped me move faster on the actual coding.
+- **The app itself runs on AI:** The misinformation detector calls OpenRouter API (Gemini, LLaMA models) to score news credibility. The chatbot runs on Groq API. These are core features — the whole point of the app is AI-powered analysis.
+- **This README was written with AI help.** I used AI to help draft and format this documentation.
+- **Debugging and deployment:** AI helped me troubleshoot build errors, fix CSS issues, and get the Vercel deployment working.
 
-### AI in the Application Itself
-* **Misinformation Analysis:** The core credibility scoring engine uses the **OpenRouter API** to route prompts to large language models (e.g., Google Gemini, Meta LLaMA) for real-time news and claim analysis.
-* **AI Chatbot:** The built-in chat feature uses the **Groq API** running open-source LLMs to answer user questions about misinformation, digital safety, and Indian cyber law.
-* **Deepfake Detection:** The deepfake analysis module leverages AI models to evaluate media authenticity.
-
-### What Was NOT AI-Generated
-* **Project concept & ideation** — conceived and designed by the team.
-* **Data curation** (police station database, helpline numbers, legal references) — manually researched.
-* **Testing & validation** — manually performed by the team.
+**What I did myself:** The project idea, the data research (police stations, helplines, legal info), testing everything, and making the final calls on how things should look and work.
 
 ---
 
